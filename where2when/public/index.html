@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="sampleApp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +15,25 @@
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
 
+	<script src="/bower_components/angular/angular.js"></script>
+	
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+	
+	<!-- AngularFire -->
+	<script src="/bower_components/angularfire/dist/angularfire.min.js"></script>
+	
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+	
+	<script src="/bower_components/angular-aria/angular-aria.js"></script>
+	<script src="/bower_components/angular-animate/angular-animate.js"></script>
+	<script src="/bower_components/angular-material/angular-material.js"></script>
+	
+	<script src="app/app.module.js"></script>
+	<script src="app/header/header.module.js"></script>
+	<script src="app/header/header.component.js"></script>
+	
     <style media="screen">
       body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
       #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
@@ -31,10 +50,23 @@
     </style>
   </head>
   <body>
+	<header ></header>
     <div id="message">
       <h2>Welcome</h2>
       <h1>Et voila Where2When!</h1>
     </div>
    
   </body>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyCiDtA8tJ0pRA0J7Gsau69Rq-3wu8YYJeg",
+		authDomain: "yopi-6527c.firebaseapp.com",
+		databaseURL: "https://yopi-6527c.firebaseio.com",
+		projectId: "yopi-6527c",
+		storageBucket: "yopi-6527c.appspot.com",
+		messagingSenderId: "977983919694"
+	  };
+	  firebase.initializeApp(config);
+</script>
 </html>
