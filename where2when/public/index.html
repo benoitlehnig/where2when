@@ -1,72 +1,74 @@
 <!DOCTYPE html>
 <html ng-app="sampleApp">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Firebase Hosting</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/4.1.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.1.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.1.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.1.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/4.1.1/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
 
-	<script src="/bower_components/angular/angular.js"></script>
-	
-	<!-- Firebase -->
-	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-	
-	<!-- AngularFire -->
-	<script src="/bower_components/angularfire/dist/angularfire.min.js"></script>
-	
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
-	
-	<script src="/bower_components/angular-aria/angular-aria.js"></script>
-	<script src="/bower_components/angular-animate/angular-animate.js"></script>
-	<script src="/bower_components/angular-material/angular-material.js"></script>
-	
-	<script src="app/app.module.js"></script>
-	<script src="app/header/header.module.js"></script>
-	<script src="app/header/header.component.js"></script>
-	
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
+  <link rel="stylesheet" href="../styles/main.css">
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/4.1.1/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/4.1.1/firebase-auth.js"></script>
+  <script defer src="/__/firebase/4.1.1/firebase-database.js"></script>
+  <script defer src="/__/firebase/4.1.1/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/4.1.1/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+
+  <!-- AngularFire -->
+  <script src="/bower_components/angularfire/dist/angularfire.min.js"></script>
+
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+
+  <script src="/bower_components/angular-aria/angular-aria.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+  <script src="app/app.module.js"></script>
+  <script src="app/header/header.module.js"></script>
+  <script src="app/header/header.component.js"></script>
+
+  <style media="screen">
+    body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+    #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+    #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+    #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+    #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+    #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+    #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+    #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+    @media (max-width: 600px) {
+      body, #message { margin-top: 0; background: white; box-shadow: none; }
+      body { border-top: 16px solid #ffa100; }
+    }
+  </style>
+</head>
+<body>
 	<header ></header>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Et voila Where2When!</h1>
-    </div>
-   
-  </body>
-	<script>
+  <div id="message">
+    <h2>Welcome</h2>
+    <h1>Et voila Where2When!</h1>
+  </div>
+
+</body>
+<script>
 	  // Initialize Firebase
 	  var config = {
-		apiKey: "AIzaSyCiDtA8tJ0pRA0J7Gsau69Rq-3wu8YYJeg",
-		authDomain: "yopi-6527c.firebaseapp.com",
-		databaseURL: "https://yopi-6527c.firebaseio.com",
-		projectId: "yopi-6527c",
-		storageBucket: "yopi-6527c.appspot.com",
-		messagingSenderId: "977983919694"
-	  };
-	  firebase.initializeApp(config);
-</script>
-</html>
+      apiKey: "AIzaSyCOE5tUQNwYwS7e2D1S3PG_uVy_EOAL0KM",
+      authDomain: "yopi-6527c.firebaseapp.com",
+      databaseURL: "https://yopi-6527c.firebaseio.com",
+      projectId: "yopi-6527c",
+      storageBucket: "yopi-6527c.appspot.com",
+      messagingSenderId: "977983919694"
+    };
+    firebase.initializeApp(config);
+  </script>
+  </html>
