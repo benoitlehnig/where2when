@@ -1,0 +1,24 @@
+<div>
+List group
+<md-button  class="md-raised" aria-label="Init" ng-click="init()">Init</md-button>
+
+
+<ul>
+	<li ng-repeat="group in groups"> {{group.$id}} - {{group.name}}</li>
+</ul>
+
+<md-input-container>
+    <label>Name</label>
+    <input ng-model="newGroup.name">
+</md-input-container>
+<ul>
+	<li ng-repeat="people in newGroup.people"> 
+		<md-input-container>
+	    <label>Email</label>
+	    <input ng-model="people.email">
+	</md-input-container>
+	</li>
+</ul>
+<md-button  class="md-raised" aria-label="Create New Group" ng-click="createNewGroup()">Create New Group</md-button>
+
+</div>
