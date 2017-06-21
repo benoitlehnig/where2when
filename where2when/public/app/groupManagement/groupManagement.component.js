@@ -25,7 +25,7 @@
 
 		$http({
 		    method: 'POST',
-		    url: "http://ipenpen.free.fr/Why/sendMail.php",
+		    url: "https://ipenpen.free.fr/Why/sendMail.php",
 		    data: "email=" + $scope.newGroup.people[0].email + "&groupName="+ $scope.newGroup.name,
 		    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		}).then(
