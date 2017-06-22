@@ -1,26 +1,30 @@
-<div class="message">
+<div ng-show="$root.firebaseUser" class="message">
 	<form>
 		<h1>Welcome in YOP part</h1>
 
 		<!-- Group selection -->
-		<div>
+		<div class="group-selection">
 			<h2 ng-show="groups.length">List of existing groups</h2>
 			<h2 ng-show="!groups.length">No existing group</h2>
 			<md-radio-group ng-model="selectedGroupId">
-				<md-radio-button ng-repeat="group in groups" ng-value="$index">
-					{{group.name}} ( {{group.admin.name}} )
-					<div class="isUpdated" ng-show="group.isUpdated">*</div>
-					<div class="isUpdated" >{{firebaseUser.displayName}}</div>
-				</md-radio-button>
-				<md-radio-button ng-value="-1" >
-					Create a new group
-					<div class="isUpdated" ng-show="newGroup.isUpdated">*</div>
-				</md-radio-button>
+				<div ng-repeat="group in groups" class="group-row">
+					<md-radio-button ng-value="$index">
+						{{group.name}} ( {{group.admin.name}} )
+						<div class="isUpdated" ng-show="group.isUpdated">*</div>
+					</md-radio-button>
+					<md-button ng-show="$root.firebaseUser.uid==group.admin.id" class="md-raised button-remove button-remove-group" ng-click="deleteGroup($index)">-</md-button>
+				</div>
+				<div class="group-row">
+					<md-radio-button ng-value="-1" >
+						+ Create a new group
+						<div class="isUpdated" ng-show="newGroup.isUpdated">*</div>
+					</md-radio-button>
+				</div>
 			</md-radio-group>
 		</div>
 
 		<!-- Group creation -->
-		<div ng-show="selectedGroupId == -1">
+		<div class="group-creation" ng-show="selectedGroupId == -1">
 			<h2>Enter the name of the new group</h2>
 			<md-input-container class="col-xs-24">
 			    <label>Group Name</label>
@@ -29,7 +33,7 @@
 		</div>
 
 		<!-- Group edition -->
-		<div>
+		<div class="group-edition">
 			<h2 ng-show="groups[selectedGroupId].people.length">List of people in this group</h2>
 			<h2 ng-show="!groups[selectedGroupId].people.length">No one in this group</h2>
 		    <ul>

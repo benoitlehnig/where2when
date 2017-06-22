@@ -61,3 +61,22 @@ li.someone {
     display: inline-block;
     font-size: 25px;
 }
+
+.button-remove.button-remove-group {
+    height: 20px;
+    width: 20px;
+    min-width: 0px;
+    min-height: 0px;
+    line-height: 20px;
+    float: right;
+    margin-right: 30px;
+}
+.group-row {
+	width: 100%;
+	padding: 0px 10px;
+}
+.group-row, .group-row md-radio-button{	
+    float: left;
+    position: relative;
+}
+

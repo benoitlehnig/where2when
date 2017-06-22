@@ -11,12 +11,12 @@
 
 	function GroupManagementController($scope, $rootScope,$timeout,$firebaseArray, $http) {
 		$scope.refListGroup = firebase.database().ref("groups");
-		$scope.firebaseUser = $rootScope.firebaseUser;
 		$scope.selectedGroupId = -1;
 		$scope.groups = $firebaseArray($scope.refListGroup);
 		$scope.newGroup = {
 			name: "",
-			people: [
+			people:
+			[
 			]
 		};
 
@@ -63,7 +63,20 @@
 		    }
 	    };
 
+		$scope.deleteGroup = function(i) {
+			var item = $scope.groups[i];
+			$scope.groups.$remove(item);
+		};
 
+	    $scope.$on("callDB", function(){
+		   $scope.groups = $firebaseArray($scope.refListGroup);
+		   if ($rootScope.firebaseUser) {
+			   $scope.newGroup.people = [{
+			   	name: $rootScope.firebaseUser.displayName,
+			   	email: $rootScope.firebaseUser.email
+			   }];
+			}
+		});
 	  }
 
 }());

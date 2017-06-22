@@ -22,7 +22,7 @@
 	        		console.log(firebaseUser);
 	            	$rootScope.firebaseUser = firebaseUser;
 	            	$scope.firebaseUser= firebaseUser;
- 					window.location.reload();
+ 					//window.location.reload();
 	         })
 	        .catch(function(error) {
 	           		$scope.error = error;
@@ -31,7 +31,7 @@
 
 		$scope.signOut = function(){
 	        $scope.auth.$signOut();
- 			window.location.reload();
+ 			//window.location.reload();
 		};
 
 		// any time auth state changes, add the user data to scope
@@ -41,6 +41,9 @@
 	        	$scope.firebaseUser= firebaseUser;
 	        	var profilePicUrl = firebaseUser.photoURL;
 	        	$('#user-pic')[0].style.backgroundImage = 'url(' + (profilePicUrl || '/images/profile_placeholder.png') + ')';
+	        	$timeout(function(){
+              		$scope.$apply();
+            	});
 	      	}	
 	      	else{	        
 	        	$rootScope.firebaseUser = null;
@@ -48,6 +51,7 @@
               		$scope.$apply();
             	});
 	      	}
+        	$rootScope.$broadcast("callDB");
 	    });
 	  }
 }());
