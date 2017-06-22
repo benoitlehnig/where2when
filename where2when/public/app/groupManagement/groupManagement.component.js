@@ -12,6 +12,7 @@
 	function GroupManagementController($scope, $rootScope,$timeout,$firebaseArray, $http) {
 		$scope.refListGroup = firebase.database().ref("groups");
 		$scope.selectedGroupId = -1;
+		$scope.clicked = -1;
 		$scope.groups = $firebaseArray($scope.refListGroup);
 		$scope.newGroup = {
 			name: "",
@@ -62,6 +63,15 @@
 		    	$scope.newGroup.isUpdated = true;
 		    }
 	    };
+
+	    $scope.getInitial = function(fullName) {
+	    	var names = fullName.split(" ");
+	    	var result= "";
+	    	for (var i = 0; i < names.length; i++) {
+				result += names[i][0];
+	    	}
+	    	return result;
+	    }
 
 		$scope.deleteGroup = function(i) {
 			var item = $scope.groups[i];

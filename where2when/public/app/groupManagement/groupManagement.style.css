@@ -33,16 +33,12 @@
     margin: 0px;
 }
 
-.button-add, .button-remove {
+.button-add {
     width: 40px;
     height: 40px;
     border-radius: 20px;
     display: block;
     float: right;
-}
-
-li.someone {
-    line-height: 60px;
 }
 
 .group-radio {
@@ -62,14 +58,17 @@ li.someone {
     font-size: 25px;
 }
 
-.button-remove.button-remove-group {
+.group-row-radio {
+	width: 80%;
+}
+.button-remove.group-row-button {
     height: 20px;
     width: 20px;
+    max-width: 20%;
     min-width: 0px;
     min-height: 0px;
     line-height: 20px;
     float: right;
-    margin-right: 30px;
 }
 .group-row {
 	width: 100%;
@@ -79,4 +78,71 @@ li.someone {
     float: left;
     position: relative;
 }
+
+.group-creation {
+    margin-bottom: 20px;
+}
+
+.someone, .someone-email, .someone-remove, .someone-name {
+	border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+.someone-email, .someone-remove, .someone-name {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    z-index: 9;
+}
+
+
+.someone {
+	position: relative;
+	cursor: pointer;
+    margin: 10px;
+}
+
+.someone-name {
+	background: #ECEFF1;
+    z-index: 10;
+    text-align: center;
+    line-height: 50px;
+}
+.someone.clicked .someone-name {
+	background: #ffa100;
+	color: white;
+    z-index: 12;
+}
+
+.someone-email {
+	background: green;
+	overflow: hidden;
+    opacity: 0;
+  	transition: opacity 0.1s linear, left 0.1s, top 0.1s;
+}
+
+.someone-remove {
+	background: green;
+    min-width: 0px;
+    min-height: 0px;
+    opacity: 0;
+  	transition: opacity 0.1s linear, left 0.1s, top 0.1s;
+}
+
+.someone.clicked .someone-remove {
+	left: 0px;
+	top: 40px;
+    opacity: 1;
+    z-index: 11;
+}
+
+.someone.clicked .someone-email {
+	left: 0px;
+	top: -40px;
+    opacity: 1;
+    z-index: 11;
+}
+
 

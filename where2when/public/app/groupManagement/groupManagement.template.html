@@ -8,11 +8,11 @@
 			<h2 ng-show="!groups.length">No existing group</h2>
 			<md-radio-group ng-model="selectedGroupId">
 				<div ng-repeat="group in groups" class="group-row">
-					<md-radio-button ng-value="$index">
-						{{group.name}} ( {{group.admin.name}} )
+					<md-radio-button ng-value="$index" class="group-row-radio">
+						{{group.name}}
 						<div class="isUpdated" ng-show="group.isUpdated">*</div>
 					</md-radio-button>
-					<md-button ng-show="$root.firebaseUser.uid==group.admin.id" class="md-raised button-remove button-remove-group" ng-click="deleteGroup($index)">-</md-button>
+					<md-button ng-show="$root.firebaseUser.uid==group.admin.id" class="md-raised button-remove group-row-button " ng-click="deleteGroup($index)">-</md-button>
 				</div>
 				<div class="group-row">
 					<md-radio-button ng-value="-1" >
@@ -23,7 +23,13 @@
 			</md-radio-group>
 		</div>
 
-		<!-- Group creation -->
+		<!-- Group name -->
+		<div class="group-creation" ng-show="selectedGroupId != -1">
+			<h2>Group created by </h2>
+			<label ng-show="$root.firebaseUser.uid==groups[selectedGroupId].admin.id">You own this group</label>
+			<label ng-show="$root.firebaseUser.uid!=groups[selectedGroupId].admin.id">{{groups[selectedGroupId].admin.name}}</label>
+		</div>
+
 		<div class="group-creation" ng-show="selectedGroupId == -1">
 			<h2>Enter the name of the new group</h2>
 			<md-input-container class="col-xs-24">
@@ -37,12 +43,15 @@
 			<h2 ng-show="groups[selectedGroupId].people.length">List of people in this group</h2>
 			<h2 ng-show="!groups[selectedGroupId].people.length">No one in this group</h2>
 		    <ul>
-		    	<li ng-repeat="people in (selectedGroupId==-1?newGroup.people:groups[selectedGroupId].people)" class="someone col-xs-24">
-		    		<label class="col-xs-10">{{people.name}}</label>
-		    		<label class="col-xs-10">{{people.email}}</label>
-					<div class="col-xs-4">
-						<md-button class="md-raised button-remove" ng-click="removeSomeone($index)">-</md-button>
-					</div>
+		    	<li ng-repeat="people in (selectedGroupId==-1?newGroup.people:groups[selectedGroupId].people)"
+		    		class="someone col-xs-24"
+		    		ng-click="$parent.clicked == $index ? $parent.clicked =-1 : $parent.clicked = $index"
+		    		ng-class="$parent.clicked == $index ? 'clicked' : ''"
+		    		tabindex="-1" 
+		    	>
+	    			<div class="someone-name">{{getInitial(people.name)}}</div>
+	    			<div class="someone-email">{{people.email}}</div>
+					<md-button class="someone-remove md-raised button-remove" ng-click="removeSomeone($index)">-</md-button>
 		    	</li>
 			</ul>
 			<div class="col-xs-20">
