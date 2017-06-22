@@ -3,35 +3,61 @@
     width: 100%;
     display: inline-block;
     float: left;
+    margin: 0px;
 }
 
 .col-xs-20 {
     width: 83.33%;
     display: inline-block;
     float: left;
+    margin: 0px;
 }
 
 .col-xs-12 {
     width: 50%;
     display: inline-block;
     float: left;
+    margin: 0px;
 }
 .col-xs-10 {
     width: 41.67%;
     display: inline-block;
     float: left;
+    margin: 0px;
 }
 
 .col-xs-4 {
     width: 16.67%;
     display: inline-block;
     float: left;
+    margin: 0px;
 }
 
-.button-add {
+.button-add, .button-remove {
     width: 40px;
     height: 40px;
     border-radius: 20px;
     display: block;
     float: right;
+}
+
+li.someone {
+    line-height: 60px;
+}
+
+.group-radio {
+	float: left;
+}
+
+.group-item {
+    height: 60px;
+    line-height: 60px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26);
+    margin-bottom: 5px;
+}
+
+.isUpdated.ng-scope {
+    color: rgba(255,64,129,0.87);
+    display: inline-block;
+    font-size: 25px;
 }

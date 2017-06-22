@@ -20,7 +20,7 @@ body {
 .message {
 	background: white;
 	max-width: 400px;
-	margin: 0px auto 16px;
+	margin: 16px auto 16px;
 	padding: 32px 24px;
 	border-radius: 3px;
 	overflow: auto;

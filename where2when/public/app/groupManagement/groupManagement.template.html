@@ -1,40 +1,61 @@
 <div class="message">
-	<h1>Welcome in YOP part</h1>
-	<h2>List of existing groups</h2>
-	<ul>
-		<li ng-repeat="group in groups">
-			{{group.$id}} - {{group.name}}
-		</li>
-	</ul>
-
-	<h2>Create a new group</h2>
 	<form>
-		<md-input-container class="col-xs-24">
-		    <label>Group Name</label>
-		    <input ng-model="newGroup.name">
-		</md-input-container>
-	    <ul>
-	    	<li ng-repeat="people in newGroup.people" class="col-xs-24">
-	    		<label class="col-xs-12">{{people.name}}</label>
-	    		<label class="col-xs-12">{{people.email}}</label>
-	    	</li>
-		</ul>
+		<h1>Welcome in YOP part</h1>
 
-		<div class="col-xs-20">
-			<md-input-container class="col-xs-10">
-			    <label>Some Name</label>
-			    <input ng-model="someone.name">	
-			</md-input-container> 
-			<md-input-container class="col-xs-10">  
-			    <label>Some eMail</label> 
-			    <input ng-model="someone.email">
+		<!-- Group selection -->
+		<div>
+			<h2 ng-show="groups.length">List of existing groups</h2>
+			<h2 ng-show="!groups.length">No existing group</h2>
+			<md-radio-group ng-model="selectedGroupId">
+				<md-radio-button ng-repeat="group in groups" ng-value="$index">
+					{{group.name}} ( {{group.admin.name}} )
+					<div class="isUpdated" ng-show="group.isUpdated">*</div>
+				</md-radio-button>
+				<md-radio-button ng-value="-1" >
+					Create a new group
+					<div class="isUpdated" ng-show="newGroup.isUpdated">*</div>
+				</md-radio-button>
+			</md-radio-group>
+		</div>
+
+		<!-- Group creation -->
+		<div ng-show="selectedGroupId == -1">
+			<h2>Enter the name of the new group</h2>
+			<md-input-container class="col-xs-24">
+			    <label>Group Name</label>
+			    <input ng-model="newGroup.name">
 			</md-input-container>
 		</div>
-		<div class="col-xs-4">
-			<md-button class="md-raised button-add col-xs-4" ng-click="addSomeone()">+</md-button>
-		</div>
-		<div class="col-xs-24">
-			<md-button class="md-raised button-submit col-xs-24" ng-click="createNewGroup()">Create New Group</md-button>
+
+		<!-- Group edition -->
+		<div>
+			<h2 ng-show="groups[selectedGroupId].people.length">List of people in this group</h2>
+			<h2 ng-show="!groups[selectedGroupId].people.length">No one in this group</h2>
+		    <ul>
+		    	<li ng-repeat="people in (selectedGroupId==-1?newGroup.people:groups[selectedGroupId].people)" class="someone col-xs-24">
+		    		<label class="col-xs-10">{{people.name}}</label>
+		    		<label class="col-xs-10">{{people.email}}</label>
+					<div class="col-xs-4">
+						<md-button class="md-raised button-remove" ng-click="removeSomeone($index)">-</md-button>
+					</div>
+		    	</li>
+			</ul>
+			<div class="col-xs-20">
+				<md-input-container class="col-xs-10">
+				    <label>Some Name</label>
+				    <input ng-model="someone.name">	
+				</md-input-container> 
+				<md-input-container class="col-xs-10">  
+				    <label>Some eMail</label> 
+				    <input ng-model="someone.email">
+				</md-input-container>
+			</div>
+			<div class="col-xs-4">
+				<md-button class="md-raised button-add" ng-click="addSomeone()">+</md-button>
+			</div>
+			<div class="col-xs-24">
+				<md-button class="md-raised button-submit col-xs-24" ng-click="saveTheGroup()">Save the Group</md-button>
+			</div>
 		</div>
 	</form>
 
