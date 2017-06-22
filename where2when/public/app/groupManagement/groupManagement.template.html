@@ -10,6 +10,7 @@
 				<md-radio-button ng-repeat="group in groups" ng-value="$index">
 					{{group.name}} ( {{group.admin.name}} )
 					<div class="isUpdated" ng-show="group.isUpdated">*</div>
+					<div class="isUpdated" >{{firebaseUser.displayName}}</div>
 				</md-radio-button>
 				<md-radio-button ng-value="-1" >
 					Create a new group

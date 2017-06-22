@@ -3,6 +3,8 @@
 		<h1>Why!</h1>
 		<span flex></span>
 		<md-button ng-show="firebaseUser == null" class="md-raised" aria-label="Login" ng-click="signIn()">Login</md-button>
+		<md-button ng-show="firebaseUser != null" class="md-raised" aria-label="Login" ng-click="signOut()">Logoff</md-button>
+		<h1 ng-show="firebaseUser != null">{{firebaseUser.displayName}}</h1>
 		<div id="user-pic"></div>
 	</div>
 </md-toolbar>

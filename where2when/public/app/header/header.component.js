@@ -22,23 +22,27 @@
 	        		console.log(firebaseUser);
 	            	$rootScope.firebaseUser = firebaseUser;
 	            	$scope.firebaseUser= firebaseUser;
+ 					window.location.reload();
 	         })
 	        .catch(function(error) {
 	           		$scope.error = error;
 	        });
 		};
 
+		$scope.signOut = function(){
+	        $scope.auth.$signOut();
+ 			window.location.reload();
+		};
+
 		// any time auth state changes, add the user data to scope
 	    $scope.auth.$onAuthStateChanged(function(firebaseUser) {
 	      	if(firebaseUser !==null){
-	      		console.log(firebaseUser);
 	        	$rootScope.firebaseUser = firebaseUser;
 	        	$scope.firebaseUser= firebaseUser;
 	        	var profilePicUrl = firebaseUser.photoURL;
 	        	$('#user-pic')[0].style.backgroundImage = 'url(' + (profilePicUrl || '/images/profile_placeholder.png') + ')';
 	      	}	
-	      	else{
-	        
+	      	else{	        
 	        	$rootScope.firebaseUser = null;
 	        	$timeout(function(){
               		$scope.$apply();
