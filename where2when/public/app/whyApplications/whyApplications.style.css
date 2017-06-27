@@ -1,0 +1,15 @@
+.whyapplications {	
+    max-width: 448px;
+    margin: 16px auto 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.message.whyapplication {
+    width: calc(50% - 20px);
+    box-sizing: border-box;
+    margin: 10px 0px;
+    cursor: pointer;
+}

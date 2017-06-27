@@ -9,20 +9,20 @@
 		}
 	);
 
-	function HeaderController($scope,$firebaseAuth,$rootScope,$timeout) {
+	function HeaderController($scope,$firebaseAuth,$rootScope,$timeout, $http) {
 		$scope.auth = $firebaseAuth();
 		$scope.firebaseUser = null;
 
 
 		$scope.signIn = function(){
 			var provider = new firebase.auth.GoogleAuthProvider();
+			provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 	        $scope.auth.$signInWithPopup(provider)
 	        .then(
 	        	function(firebaseUser) {
 	        		console.log(firebaseUser);
 	            	$rootScope.firebaseUser = firebaseUser;
 	            	$scope.firebaseUser= firebaseUser;
- 					//window.location.reload();
 	         })
 	        .catch(function(error) {
 	           		$scope.error = error;
@@ -41,6 +41,9 @@
 	        	$scope.firebaseUser= firebaseUser;
 	        	var profilePicUrl = firebaseUser.photoURL;
 	        	$('#user-pic')[0].style.backgroundImage = 'url(' + (profilePicUrl || '/images/profile_placeholder.png') + ')';
+	        	/*var id = $scope.firebaseUser.ie;
+	        	var contacts = $http.get('https://www.googleapis.com/plus/v1/people/' + $scope.firebaseUser.uid);
+	        	console.log(contacts);*/
 	        	$timeout(function(){
               		$scope.$apply();
             	});
@@ -53,5 +56,9 @@
 	      	}
         	$rootScope.$broadcast("callDB");
 	    });
+
+
+
+
 	  }
 }());

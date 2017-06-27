@@ -10,10 +10,9 @@
 	);
 
 	function GroupManagementController($scope, $rootScope,$timeout,$firebaseArray, $http) {
-		$scope.refListGroup = firebase.database().ref("groups");
 		$scope.selectedGroupId = -1;
 		$scope.clicked = -1;
-		$scope.groups = $firebaseArray($scope.refListGroup);
+		//$scope.groups = $firebaseArray($scope.refListGroup);
 		$scope.newGroup = {
 			name: "",
 			people:
@@ -79,14 +78,16 @@
 		};
 
 	    $scope.$on("callDB", function(){
-		   $scope.groups = $firebaseArray($scope.refListGroup);
-		   if ($rootScope.firebaseUser) {
-			   $scope.newGroup.people = [{
+		   	if ($rootScope.firebaseUser) {
+				$scope.refListGroup = firebase.database().ref("groups");
+		   		$scope.groups = $firebaseArray($scope.refListGroup);
+			   	$scope.newGroup.people = [{
 			   	name: $rootScope.firebaseUser.displayName,
 			   	email: $rootScope.firebaseUser.email
 			   }];
 			}
 		});
+
 	  }
 
 }());
