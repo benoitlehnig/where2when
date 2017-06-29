@@ -1,10 +1,10 @@
 <md-toolbar>
 	<div class="md-toolbar-tools">
-		<h1>Why!</h1>
-		<span flex></span>
+		<span flex>You have X notifications</span>
+		<span flex>2 invitations</span>
+		<span flex>3 pending votes</span>
 		<md-button ng-show="$root.firebaseUser == null" class="md-raised" aria-label="Login" ng-click="signIn()">Login</md-button>
-		<h1 ng-show="$root.firebaseUser != null">{{firebaseUser.displayName}}</h1>
-		<div id="user-pic"></div>
+		<div ng-show="$root.firebaseUser != null" id="user-pic"></div>
 		<md-button ng-show="$root.firebaseUser != null" class="md-raised" aria-label="Login" ng-click="signOut()">Logoff</md-button>
 	</div>
 </md-toolbar>

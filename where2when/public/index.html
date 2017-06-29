@@ -37,29 +37,34 @@
   <script src="app/header/header.component.js"></script>
   <script src="app/groupManagement/groupManagement.module.js"></script>
   <script src="app/groupManagement/groupManagement.component.js"></script>
-  <script src="app/whyApplications/whyApplications.module.js"></script>
-  <script src="app/whyApplications/whyApplications.component.js"></script>
+  <script src="app/applicationList/applicationList.module.js"></script>
+  <script src="app/applicationList/applicationList.component.js"></script>
+  <script src="app/oneApplication/oneApplication.module.js"></script>
+  <script src="app/oneApplication/oneApplication.component.js"></script>
+  <script src="app/sign/sign.module.js"></script>
+  <script src="app/sign/sign.component.js"></script>
 
   <link rel="stylesheet" type="text/css" href="app/groupManagement/groupManagement.style.css">
-  <link rel="stylesheet" type="text/css" href="app/whyApplications/whyApplications.style.css">
+  <link rel="stylesheet" type="text/css" href="app/applicationList/applicationList.style.css">
+  <link rel="stylesheet" type="text/css" href="app/oneApplication/oneApplication.style.css">
+  <link rel="stylesheet" type="text/css" href="app/sign/sign.style.css">
 </head>
 <body>
   <header></header>
-  <whyapplications></whyapplications>
-	<groupmanagement></groupmanagement>
-  <div class="message">
-      <h1>"Piou Piou"</h1>
-      <h2>bpoulain, 2017</h2>
+  <div class="lefter">
+    <h1>display.selectedApplication</h1>
+    <h2>{{$root.display.selectedApplication}}</h2>
+    <h1>display.applicationList[$root.display.selectedApplication].title</h1>
+    <h2>{{$root.applicationList[$root.display.selectedApplication].title}}</h2>
+    <h1>display.step</h1>
+    <h2>{{$root.display.step}}</h2>
+    <h1>stepList[$root.display.step].title</h1>
+    <h2>{{$root.stepList[$root.display.step].title}}</h2>
   </div>
-  <div class="message">
-      <h1>"Code Code Code !"</h1>
-      <h2>blehnig, 2018</h2>
-  </div>
-  <div class="message">
-      <h1>"- Why did you call the company Why ?</h1>
-      <h1>&nbsp;- Because I did not call it Because !"</h1>
-      <h2>lricci, 2027</h2>
-  </div>
+  <applicationlist ng-init="$root.display.selectedApplication = '-1'" class="container"></applicationlist>
+  <oneapplication ng-init="$root.display.step = '-1'" class="container"></oneapplication>
+  <groupmanagement class="container"></groupmanagement>
+  <sign class="container"></sign>
 </body>
 <script>
 	  // Initialize Firebase

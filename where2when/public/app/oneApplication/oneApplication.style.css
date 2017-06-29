@@ -1,0 +1,26 @@
+.header {
+	width: 100%;
+}
+
+.block.step {
+	width: calc(25% - 10px);
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    font-size: 8px;
+    cursor: pointer;
+}
+.block.vote {
+	width: calc(100%);
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.block.step h2 {
+    font-size: 8px;
+}
+
+
+.block.vote.selected, .block.step.selected {
+    border: 2px solid rgba(255,64,129,0.87);
+}

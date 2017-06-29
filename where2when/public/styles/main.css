@@ -1,3 +1,91 @@
+
+
+/* body */
+body {
+	color: rgba(0,0,0,0.87);
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+.container {
+    max-width: 448px;
+    margin: 16px auto 16px;	
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.container > * {
+	margin: 10px 0px;
+}
+.block {
+    background: white;
+    padding: 32px 24px;
+    border-radius: 3px;
+    overflow: auto;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	width: 100%;
+}
+
+h2 {
+	color: rgba(255,64,129,0.87);
+	font-weight: bold;
+	font-size: 16px;
+	margin: 0 0 8px;
+}
+
+h1 {
+	font-size: 22px;
+	font-weight: 300;
+	color: rgba(0,0,0,0.6);
+	margin: 0 0 16px;
+}
+
+
+/* Debug datamodel */
+.lefter {
+    position: fixed;
+    width: 420px;
+    word-wrap: break-word;
+    padding: 20px;
+}
+@media screen and (max-width: 640px) {
+  .lefter {
+  	display: none;
+  }
+}
+.lefter h1, .lefter h2 {
+	font-size: 50%; 
+}
+.lefter h1 {
+	margin: 6px 0 0;
+}
+
+@media screen and (min-width: 640px) {
+	sign {
+	    display: none !important;
+	}
+}
+
+
+
+/* Header */
+md-toolbar._md-toolbar-transitions {
+    background: rgba(255,64,129,0.87);
+}
+md-toolbar._md-toolbar-transitions h1 {
+    color: white;	
+}
+
+button.md-raised.md-button.md-ink-ripple {
+    color: rgba(255,64,129,0.87);
+    background: white;
+    border-radius: 3px;
+}
+button.md-raised.md-button.md-ink-ripple:hover {
+    background: rgba(255,64,129,0.87);
+    color: white;
+}
 #user-pic {
 	display: inline-block;
 	background-image: url('/images/profile_placeholder.png');
@@ -6,68 +94,4 @@
 	height: 40px;
 	background-size: 40px;
 	border-radius: 20px;
-}
-
-
-body {
-	background: #ECEFF1;
-	color: rgba(0,0,0,0.87);
-	font-family: Roboto, Helvetica, Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-}
-
-md-toolbar._md-toolbar-transitions {
-    background: rgba(255,64,129,0.87);
-}
-
-.message {
-	background: white;
-	max-width: 400px;
-	margin: 16px auto 16px;
-	padding: 32px 24px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-.message h2 {
-	color: rgba(255,64,129,0.87);
-	font-weight: bold;
-	font-size: 16px;
-	margin: 0 0 8px;
-}
-
-.message h1 {
-	font-size: 22px;
-	font-weight: 300;
-	color: rgba(0,0,0,0.6);
-	margin: 0 0 16px;
-}
-
-.message p {
-	line-height: 140%;
-	margin: 16px 0 24px;
-	font-size: 14px;
-}
-
-
-.message, .message a {
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-#load {
-	color: rgba(0,0,0,0.4);
-	text-align: center;
-	font-size: 13px;
-}
-
-@media (max-width: 600px) {
-  body, #message {
-  	margin-top: 0;
-  	background: white;
-  	box-shadow: none;
-  }
-  body {
-  	border-top: 16px solid #ffa100;
-  }
 }

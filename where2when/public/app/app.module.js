@@ -5,7 +5,9 @@
       'firebase',
       'header',
       'groupManagement',
-      'whyApplications',
+      'applicationList',
+      'oneApplication',
+      'sign',
       'ngMaterial'
       ])
     .run(['$rootScope', '$timeout', function ($rootScope,$timeout) {
