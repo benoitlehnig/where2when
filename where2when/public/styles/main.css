@@ -1,11 +1,12 @@
 
 
 /* body */
-body {
+html body {
 	color: rgba(0,0,0,0.87);
 	font-family: Roboto, Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
+    padding-top: 50px;
 }
 .container {
     max-width: 448px;
@@ -48,6 +49,7 @@ h1 {
     width: 420px;
     word-wrap: break-word;
     padding: 20px;
+	pointer-events: none;
 }
 @media screen and (max-width: 640px) {
   .lefter {
@@ -72,6 +74,8 @@ h1 {
 /* Header */
 md-toolbar._md-toolbar-transitions {
     background: rgba(255,64,129,0.87);
+    position: fixed;
+    top: 0px;
 }
 md-toolbar._md-toolbar-transitions h1 {
     color: white;	

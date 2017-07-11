@@ -1,8 +1,9 @@
 <div ng-repeat="application in $root.applicationList"
 	ng-click="$root.display.selectedApplication = application.id "
-	class="block application "
+	class="block application {{application.title}}"
 	ng-class="application.id == $root.display.selectedApplication ? 'selected' : '' " 
-	tabindex="-1">
-	<h1>{{application.title}}</h1>
+	tabindex="-1"
+	style="background-image: url(/resources/applicationsIcons/{{application.icon}});"
+	 >
 	<h2>{{application.description}}</h2>
 </div>

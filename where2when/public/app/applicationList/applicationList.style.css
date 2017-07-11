@@ -4,9 +4,26 @@
     box-sizing: border-box;
     cursor: pointer;
     border: 2px solid transparent;
+    background-size: cover;
+    background-color: transparent;
+    box-shadow: none;
+    height: 150px;
 }
 
 
 .block.application.selected {
     border: 2px solid rgba(255,64,129,0.87);
+}
+
+.block.application h2 {
+	display: none;
+}
+
+
+.block.application:not(.selected):hover h2 {
+	display: block;
+}
+
+.block.application:not(.selected):hover {
+	background: none; 
 }

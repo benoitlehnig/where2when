@@ -1,0 +1,36 @@
+[debug] [2017-07-11T10:16:14.848Z] ----------------------------------------------------------------------
+[debug] [2017-07-11T10:16:14.851Z] Command:      D:\Program Files\NodeJS\node.exe C:\Users\lricci\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve -p 2000
+[debug] [2017-07-11T10:16:14.852Z] CLI Version:  3.9.1
+[debug] [2017-07-11T10:16:14.852Z] Platform:     win32
+[debug] [2017-07-11T10:16:14.852Z] Node Version: v6.10.0
+[debug] [2017-07-11T10:16:14.852Z] Time:         Tue Jul 11 2017 12:16:14 GMT+0200 (Romance Daylight Time)
+[debug] [2017-07-11T10:16:14.852Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-11T10:16:14.870Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-11T10:16:14.871Z] > authorizing via signed-in user
+[debug] [2017-07-11T10:16:14.874Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-07-11T10:16:14.874Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/CuUG_MtRiRejqOnqc_l-h-DQhrQA6ab62VqU2SZAk1k',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue Jul 11 2017 12:16:14 GMT+0200 (Romance Daylight Time)
+[debug] [2017-07-11T10:16:15.752Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-11T10:16:15.758Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/yopi-6527c  
+ Tue Jul 11 2017 12:16:15 GMT+0200 (Romance Daylight Time)
+[debug] [2017-07-11T10:16:16.878Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-11T10:16:16.879Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/yopi-6527c/tokens  
+ Tue Jul 11 2017 12:16:16 GMT+0200 (Romance Daylight Time)
+[debug] [2017-07-11T10:16:17.796Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\git_clones\where2when\where2when'...
+[info] 
+[debug] [2017-07-11T10:16:17.799Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/yopi-6527c  
+ Tue Jul 11 2017 12:16:17 GMT+0200 (Romance Daylight Time)
+[debug] [2017-07-11T10:16:18.848Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-11T10:16:18.848Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/977983919694/clients/_:getWebAppConfig  
+ Tue Jul 11 2017 12:16:18 GMT+0200 (Romance Daylight Time)
+[debug] [2017-07-11T10:16:20.056Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:2000
+
