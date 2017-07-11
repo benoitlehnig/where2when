@@ -3,7 +3,7 @@
     width: calc(50% - 20px);
     box-sizing: border-box;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 2px solid;
     background-size: cover;
     background-color: transparent;
     box-shadow: none;
@@ -12,18 +12,19 @@
 
 
 .block.application.selected {
-    border: 2px solid rgba(255,64,129,0.87);
+    /*border: 0px solid;*/
 }
 
 .block.application h2 {
 	display: none;
+    text-align: center;
 }
 
 
-.block.application:not(.selected):hover h2 {
+.block.application:hover h2 {
 	display: block;
 }
 
-.block.application:not(.selected):hover {
+.block.application:hover {
 	background: none; 
 }

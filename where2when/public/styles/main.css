@@ -69,25 +69,13 @@ h1 {
 	}
 }
 
-
-
-/* Header */
-md-toolbar._md-toolbar-transitions {
-    background: rgba(255,64,129,0.87);
-    position: fixed;
-    top: 0px;
-}
-md-toolbar._md-toolbar-transitions h1 {
-    color: white;	
-}
-
 button.md-raised.md-button.md-ink-ripple {
-    color: rgba(255,64,129,0.87);
+    color: inherit;
     background: white;
     border-radius: 3px;
 }
 button.md-raised.md-button.md-ink-ripple:hover {
-    background: rgba(255,64,129,0.87);
+    background: inherit;
     color: white;
 }
 #user-pic {

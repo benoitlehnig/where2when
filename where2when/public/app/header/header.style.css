@@ -1,0 +1,11 @@
+md-toolbar._md-toolbar-transitions {
+    position: fixed;
+    top: 0px;
+}
+md-toolbar._md-toolbar-transitions h1 {
+    color: white;   
+}
+md-toolbar-tools._md _md-toolbar-transitions .md-toolbar-tools span {
+    color: white;
+    width: 100px;
+}
