@@ -6,6 +6,7 @@
     border: 2px solid;
     background-size: cover;
     background-color: transparent;
+    background-position: center; 
     box-shadow: none;
     height: 150px;
 }

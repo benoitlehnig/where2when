@@ -1,6 +1,7 @@
 md-toolbar._md-toolbar-transitions {
     position: fixed;
     top: 0px;
+    left: 0px;
 }
 md-toolbar._md-toolbar-transitions h1 {
     color: white;   
@@ -8,4 +9,21 @@ md-toolbar._md-toolbar-transitions h1 {
 md-toolbar-tools._md _md-toolbar-transitions .md-toolbar-tools span {
     color: white;
     width: 100px;
+}
+
+md-toolbar .md-toolbar-tools {
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+    transition-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+    -webkit-transition-property: background-color, fill, color;
+    transition-property: background-color, fill, color;
+
+    
+    align-items: flex-start;
+    padding: 10px 16px;
+}
+
+md-toolbar .md-toolbar-tools span {
+	font-size: 3vw;
 }
