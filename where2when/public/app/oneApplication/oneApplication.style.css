@@ -22,5 +22,5 @@
 
 
 .block.vote.selected, .block.step.selected {
-    border: 2px solid rgba(255,64,129,0.87);
+    border: 2px solid {{display.mainColor}};
 }

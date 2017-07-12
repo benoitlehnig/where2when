@@ -8,7 +8,8 @@
       'applicationList',
       'oneApplication',
       'sign',
-      'ngMaterial'
+      'ngMaterial',
+      'ngCss'
       ])
     .run(['$rootScope', '$timeout', function ($rootScope,$timeout) {
 

@@ -29,7 +29,7 @@ html body {
 }
 
 h2 {
-	color: rgba(255,64,129,0.87);
+    color: {{display.mainColor}};
 	font-weight: bold;
 	font-size: 16px;
 	margin: 0 0 8px;
@@ -70,12 +70,12 @@ h1 {
 }
 
 button.md-raised.md-button.md-ink-ripple {
-    color: inherit;
+    color: {{display.mainColor}};
     background: white;
     border-radius: 3px;
 }
 button.md-raised.md-button.md-ink-ripple:hover {
-    background: inherit;
+    background: {{display.mainColor}};
     color: white;
 }
 #user-pic {
@@ -86,4 +86,11 @@ button.md-raised.md-button.md-ink-ripple:hover {
 	height: 40px;
 	background-size: 40px;
 	border-radius: 20px;
+}
+
+md-radio-button.md-default-theme .md-on, md-radio-button .md-on {
+    background-color: {{display.mainColor}};
+}
+md-radio-button.md-default-theme.md-checked .md-off, md-radio-button.md-checked .md-off {
+    border-color: {{display.mainColor}};
 }

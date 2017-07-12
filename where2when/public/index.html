@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Welcome to Firebase Hosting</title>
-  <link rel="stylesheet" href="../styles/main.css">
   <!-- update the version number as needed -->
   <script defer src="/__/firebase/4.1.1/firebase-app.js"></script>
   <!-- include only the Firebase features as you need -->
@@ -29,8 +28,13 @@
   <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
   <script src="/bower_components/angular-aria/angular-aria.js"></script>
   <script src="/bower_components/angular-animate/angular-animate.js"></script>
+
+  <!-- Angular -->
   <script src="/bower_components/angular-material/angular-material.js"></script>
+  <!-- jQuery -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- ngCSS -->
+  <script src="ngCss-master/angular.ngcss.min.js"></script>
 
   <script src="app/app.module.js"></script>
   <script src="app/header/header.module.js"></script>
@@ -44,11 +48,12 @@
   <script src="app/sign/sign.module.js"></script>
   <script src="app/sign/sign.component.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="app/groupManagement/groupManagement.style.css">
-  <link rel="stylesheet" type="text/css" href="app/applicationList/applicationList.style.css">
-  <link rel="stylesheet" type="text/css" href="app/oneApplication/oneApplication.style.css">
-  <link rel="stylesheet" type="text/css" href="app/header/header.style.css">
-  <link rel="stylesheet" type="text/css" href="app/sign/sign.style.css">
+  <link rel="stylesheet" href="../styles/main.css" ng-css="{ script: 'local', live: true }">
+  <link rel="stylesheet" type="text/css" href="app/groupManagement/groupManagement.style.css" ng-css="{ script: 'local', live: true }">
+  <link rel="stylesheet" type="text/css" href="app/applicationList/applicationList.style.css" ng-css="{ script: 'local', live: true }">
+  <link rel="stylesheet" type="text/css" href="app/oneApplication/oneApplication.style.css" ng-css="{ script: 'local', live: true }">
+  <link rel="stylesheet" type="text/css" href="app/header/header.style.css" ng-css="{ script: 'local', live: true }">
+  <link rel="stylesheet" type="text/css" href="app/sign/sign.style.css" ng-css="{ script: 'local', live: true }">
 </head>
 <body>
   <header></header>

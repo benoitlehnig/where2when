@@ -111,7 +111,7 @@
     line-height: 50px;
 }
 .someone.clicked .someone-name {
-	background: rgba(255,64,129,0.87);
+	background: {{display.mainColor}};
 	color: white;
     z-index: 12;
 }
