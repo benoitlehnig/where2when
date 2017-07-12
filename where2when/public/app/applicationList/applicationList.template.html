@@ -1,5 +1,5 @@
 <div ng-repeat="application in $root.applicationList"
-	ng-click="$root.display.selectedApplication = application.id "
+	ng-click="$root.selectApplication(application.id) "
 	class="block application {{application.title}}"
 	ng-class="application.id == $root.display.selectedApplication ? 'selected' : '' " 
 	tabindex="-1"

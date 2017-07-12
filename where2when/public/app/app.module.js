@@ -15,13 +15,17 @@
 
    		$rootScope.firebaseUser = null;
 
-      $rootScope.getColor = function() {
-        if ($rootScope.applicationList && $rootScope.display && $rootScope.display.selectedApplication != -1) {
-          $rootScope.display.mainColor = $rootScope.applicationList[$rootScope.display.selectedApplication].color;
-          return $rootScope.display.mainColor;
-        }
+      // Default color
+      $rootScope.display = {mainColor: "#E64187"};
+      // Update color
+      $rootScope.selectApplication = function(applicationId) {
+        if ($rootScope.applicationList && applicationId != -1) {
+          $rootScope.display.mainColor = $rootScope.applicationList[applicationId].color;
+          $rootScope.display.selectedApplication = applicationId;
+        } else {
           $rootScope.display.mainColor = "#E64187";
-          return "#E64187";
+          $rootScope.display.selectedApplication = -1;
+        }
       };
 
    	}])

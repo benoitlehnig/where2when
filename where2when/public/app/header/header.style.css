@@ -19,11 +19,21 @@ md-toolbar .md-toolbar-tools {
     -webkit-transition-property: background-color, fill, color;
     transition-property: background-color, fill, color;
 
-    
+
     align-items: flex-start;
     padding: 10px 16px;
 }
 
 md-toolbar .md-toolbar-tools span {
 	font-size: 3vw;
+}
+
+#user-pic {
+	display: inline-block;
+	background-image: url('/images/profile_placeholder.png');
+	background-repeat: no-repeat;
+	width: 40px;
+	height: 40px;
+	background-size: 40px;
+	border-radius: 20px;
 }
